@@ -1,6 +1,6 @@
 {% set name = "pytest-asyncio" %}
-{% set version = "0.5.0" %}
-{% set sha256 = "ce457148d9a8337679b19742d37f77c5e4eb53a48b626e3ce19464fa1cc25d0f" %}
+{% set version = "0.6.0" %}
+{% set sha256 = "e5c6786ece4b3bbb0cca1bf68bf089756a62760e3764dc84eaee39bfab70289b" %}
 
 package:
   name: {{ name|lower }}
