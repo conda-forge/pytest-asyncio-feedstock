@@ -1,6 +1,6 @@
 {% set name = "pytest-asyncio" %}
-{% set version = "0.6.0" %}
-{% set sha256 = "e5c6786ece4b3bbb0cca1bf68bf089756a62760e3764dc84eaee39bfab70289b" %}
+{% set version = "0.8.0" %}
+{% set sha256 = "f32804bb58a66e13a3eda11f8942a71b1b6a30466b0d2ffe9214787aab0e172e" %}
 
 package:
   name: {{ name|lower }}
@@ -13,6 +13,7 @@ source:
 
 build:
   number: 0
+  skip: True  # [py2k]
   script: python setup.py install --single-version-externally-managed --record record.txt
 
 requirements:
