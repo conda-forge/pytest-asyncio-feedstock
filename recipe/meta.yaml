@@ -11,9 +11,9 @@ source:
   sha256: 9fac5100fd716cbecf6ef89233e8590a4ad61d729d1732e0a96b84182df1daaf
 
 build:
-  number: 1000
+  number: 1001
   skip: True  # [py2k]
-  script: python -m pip install --no-deps --ignore-installed .
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
   
 requirements:
   build:
@@ -30,6 +30,7 @@ test:
 about:
   home: http://github.com/pytest-dev/pytest-asyncio
   license: Apache 2.0
+  license_file: LICENSE
   #license_file: LICENSE # License file is missing in package
   summary: 'Pytest support for asyncio'
 
