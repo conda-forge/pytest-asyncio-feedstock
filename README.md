@@ -3,7 +3,7 @@ About pytest-asyncio
 
 Home: http://github.com/pytest-dev/pytest-asyncio
 
-Package license: Apache 2.0
+Package license: Apache-2.0
 
 Feedstock license: BSD 3-Clause
 
