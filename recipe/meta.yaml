@@ -29,7 +29,7 @@ test:
 
 about:
   home: http://github.com/pytest-dev/pytest-asyncio
-  license: Apache 2.0
+  license: Apache-2.0
   license_file: LICENSE
   #license_file: LICENSE # License file is missing in package
   summary: Pytest support for asyncio
