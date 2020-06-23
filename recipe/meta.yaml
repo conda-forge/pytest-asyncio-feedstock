@@ -1,5 +1,5 @@
 {% set name = "pytest-asyncio" %}
-{% set version = "0.12.0" %}
+{% set version = "0.14.0" %}
 
 package:
   name: {{ name|lower }}
@@ -8,10 +8,10 @@ package:
 source:
   fn: {{ name }}-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 475bd2f3dc0bc11d2463656b3cbaafdbec5a47b47508ea0b329ee693040eebd2
+  sha256: 9882c0c6b24429449f5f969a5158b528f39bde47dc32e85b9f0403965017e700
 
 build:
-  number: 1
+  number: 0
   skip: true  # [py2k]
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
