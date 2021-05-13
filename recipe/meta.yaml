@@ -1,18 +1,20 @@
-{% set name = "pytest-asyncio" %}
 {% set version = "0.15.1" %}
 
 package:
-  name: {{ name|lower }}
+  name: pytest-asyncio
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.gz
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 2564ceb9612bbd560d19ca4b41347b54e7835c2f792c504f698e05395ed63f6f
+  - folder: dist
+    url: https://pypi.io/packages/source/p/pytest-asyncio/pytest-asyncio-{{ version }}.tar.gz
+    sha256: 2564ceb9612bbd560d19ca4b41347b54e7835c2f792c504f698e05395ed63f6f
+  - folder: src
+    url: https://github.com/pytest-dev/pytest-asyncio/archive/refs/tags/v{{ version }}.tar.gz
+    sha256: a8c0f2bd36c3a0c03b9fbf707be03e8316019e32333a704d09309e8459ed7ffe
 
 build:
   number: 0
-  script: {{ PYTHON }} -m pip install . --no-deps -vv
+  script: cd dist && {{ PYTHON }} -m pip install . --no-deps -vv
   noarch: python
 
 requirements:
@@ -24,17 +26,28 @@ requirements:
     - pytest >=5.4
 
 test:
+  source_files:
+    - src/tests
   imports:
     - pytest_asyncio
+  requires:
+    - pip
+    - coverage
+    - hypothesis >=5.7.1
+  commands:
+    - pip check
+    - cd src
+    - coverage run -m pytest
+    - coverage report --fail-under 96
 
 about:
   home: http://github.com/pytest-dev/pytest-asyncio
   license: Apache-2.0
-  license_file: LICENSE
+  license_file: dist/LICENSE
   summary: Pytest support for asyncio
-
   dev_url: https://github.com/pytest-dev/pytest-asyncio
 
 extra:
   recipe-maintainers:
     - sodre
+    - bollwyvl
