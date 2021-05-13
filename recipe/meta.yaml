@@ -37,9 +37,9 @@ test:
   commands:
     - pip check
     - cd src
-    # the skip is for docker network issues in CI, causes 1% coverage reduction
-    - coverage run -m pytest -k 'not unused_port_fixture'
-    - coverage report --fail-under 95
+    # the skip is for docker network issues in CI, reduces coverage from 96
+    - coverage run -m pytest -vv -k 'not (unused_port_fixture or unused_port_factory_fixture)'
+    - coverage report --fail-under 91
 
 about:
   home: http://github.com/pytest-dev/pytest-asyncio
