@@ -38,6 +38,7 @@ Installing `pytest-asyncio` from the `conda-forge` channel can be achieved by ad
 
 ```
 conda config --add channels conda-forge
+conda config --set channel_priority strict
 ```
 
 Once the `conda-forge` channel has been enabled, `pytest-asyncio` can be installed with:
@@ -116,5 +117,6 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
+* [@bollwyvl](https://github.com/bollwyvl/)
 * [@sodre](https://github.com/sodre/)
 
