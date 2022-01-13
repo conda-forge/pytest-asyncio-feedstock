@@ -1,4 +1,4 @@
-{% set version = "0.16.0" %}
+{% set version = "0.17.0" %}
 
 package:
   name: pytest-asyncio
@@ -7,10 +7,10 @@ package:
 source:
   - folder: dist
     url: https://pypi.io/packages/source/p/pytest-asyncio/pytest-asyncio-{{ version }}.tar.gz
-    sha256: 7496c5977ce88c34379df64a66459fe395cd05543f0a2f837016e7144391fcfb
+    sha256: c98e0e04ae5910bbcc219f52bdf871bd1d392f624ef77c49c236613c0b6d8ee1
   - folder: src
     url: https://github.com/pytest-dev/pytest-asyncio/archive/refs/tags/v{{ version }}.tar.gz
-    sha256: 2cc3c93f340185a9128dc1f3fcf6c57ad0bfb704c5b6ce425a3ab0ddbb875bb9
+    sha256: 1359af98ecdfb6c8c9fc3162b8f38c0e8caf5185fa0fc254b9d1723832cf3334
 
 build:
   number: 0
@@ -19,11 +19,12 @@ build:
 
 requirements:
   host:
-    - python >=3.6
+    - python >=3.7
     - pip
+    - setuptools_scm >=6.2
   run:
-    - python >=3.6
-    - pytest >=5.4
+    - python >=3.7
+    - pytest >=5.4.0
 
 test:
   source_files:
@@ -38,7 +39,7 @@ test:
     - pip check
     - cd src
     # the skip is for docker network issues in CI, reduces coverage from 96
-    - coverage run -m pytest -vv -k 'not (unused_port_fixture or unused_port_factory_fixture)'
+    - coverage run -m pytest -vv -k 'not (unused_port_fixture or unused_port_factory_fixture or auto_mode_cmdline)'
     - coverage report --fail-under 91
 
 about:
