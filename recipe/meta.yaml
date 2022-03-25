@@ -36,6 +36,7 @@ test:
     - pip
     - coverage
     - hypothesis >=5.7.1
+    - pytest-trio
   commands:
     - pip check
     - cd src
