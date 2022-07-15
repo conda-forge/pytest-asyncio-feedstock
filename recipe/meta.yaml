@@ -30,6 +30,7 @@ requirements:
 test:
   source_files:
     - src/tests
+    - setup.cfg
   imports:
     - pytest_asyncio
   requires:
