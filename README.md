@@ -1,11 +1,11 @@
-About pytest-asyncio
-====================
+About pytest-asyncio-feedstock
+==============================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/pytest-asyncio-feedstock/blob/main/LICENSE.txt)
 
 Home: http://github.com/pytest-dev/pytest-asyncio
 
 Package license: Apache-2.0
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/pytest-asyncio-feedstock/blob/main/LICENSE.txt)
 
 Summary: Pytest support for asyncio
 
