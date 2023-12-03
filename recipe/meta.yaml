@@ -1,4 +1,4 @@
-{% set version = "0.22.0" %}
+{% set version = "0.23.0" %}
 
 package:
   name: pytest-asyncio
@@ -7,10 +7,10 @@ package:
 source:
   - folder: dist
     url: https://pypi.io/packages/source/p/pytest-asyncio/pytest-asyncio-{{ version }}.tar.gz
-    sha256: 01da1bf94ff0b969cc8d760104f7c1011903d0d658bdaef0bbae769660a7fbc4
+    sha256: 236e89745b8be43b3b473640b523f26fe3c62a2afa7548e38532e9f201d22fc3
   - folder: src
     url: https://github.com/pytest-dev/pytest-asyncio/archive/refs/tags/v{{ version }}.tar.gz
-    sha256: a485ddebf2af5fe3e500c85e030fe12403c492c1efd0b003ed70b3f160b0e4f5
+    sha256: 14e9baa0916e13fee4b6f0b2a65594fe34f2b5ee70f1b6f1dc331c3861fe2721
 
 build:
   number: 0
