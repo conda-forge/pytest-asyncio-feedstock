@@ -21,7 +21,7 @@ requirements:
   host:
     - pip
     - python >=3.8
-    - setuptools_scm >=6.2
+    - setuptools-scm >=6.2
   run:
     - pytest >=7.0.0,<9
     - python >=3.8
