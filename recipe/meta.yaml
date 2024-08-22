@@ -23,7 +23,7 @@ requirements:
     - python >=3.8
     - setuptools-scm >=6.2
   run:
-    - pytest >=7.0.0,<9
+    - pytest >=8.2,<9
     - python >=3.8
 
 test:
