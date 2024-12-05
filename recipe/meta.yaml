@@ -6,25 +6,26 @@ package:
 
 source:
   - folder: dist
-    url: https://pypi.io/packages/source/p/pytest-asyncio/pytest_asyncio-{{ version }}.tar.gz
+    url: https://pypi.org/packages/source/p/pytest-asyncio/pytest_asyncio-{{ version }}.tar.gz
     sha256: d081d828e576d85f875399194281e92bf8a68d60d72d1a2faf2feddb6c46b276
   - folder: src
     url: https://github.com/pytest-dev/pytest-asyncio/archive/refs/tags/v{{ version }}.tar.gz
     sha256: e770d3d3de20968d03a556c8f2ebe461c568d283a993f4a1179ddd02e5f633a6
 
 build:
-  number: 0
+  number: 1
   script: cd dist && {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   noarch: python
 
 requirements:
   host:
     - pip
-    - python >=3.8
+    - python {{ python_min }}
+    - setuptools
     - setuptools-scm >=6.2
   run:
     - pytest >=8.2,<9
-    - python >=3.8
+    - python >={{ python_min }}
 
 test:
   source_files:
@@ -37,6 +38,7 @@ test:
     - coverage
     - hypothesis >=5.7.1
     - pytest-trio
+    - python {{ python_min }}
   commands:
     - pip check
     - cd src
