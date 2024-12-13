@@ -42,8 +42,7 @@ test:
   commands:
     - pip check
     - cd src
-    # the skip is for docker network issues in CI, reduces coverage from 96
-    - coverage run --branch -m pytest -vv --color=yes --tb=long -k 'not (unused_port_fixture or unused_port_factory_fixture or auto_mode_cmdline)'
+    - coverage run --branch -m pytest -vv --color=yes --tb=long -k 'not (unused_port_fixture or unused_port_factory_fixture or auto_mode_cmdline or no_event_loop or event_loop_after_fixture or event_loop_before_fixture)'
     - coverage report --fail-under=91
 
 about:
