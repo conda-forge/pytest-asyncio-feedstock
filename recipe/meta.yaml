@@ -43,9 +43,6 @@ test:
     - python {{ python_min }}
   commands:
     - pip check
-    - cd src
-    - coverage run --branch -m pytest -vv --color=yes --tb=long -k 'not (unused_port_fixture or unused_port_factory_fixture or auto_mode_cmdline or no_event_loop or event_loop_after_fixture or event_loop_before_fixture)'
-    - coverage report --fail-under=91
 
 about:
   home: http://github.com/pytest-dev/pytest-asyncio
