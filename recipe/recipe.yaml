@@ -39,6 +39,8 @@ tests:
       python_version: ${{ python_min }}.*
       imports: pytest_asyncio
   - files:
+      recipe:
+        - run_test.py
       source:
         - src/tests/
         - src/setup.cfg
@@ -48,6 +50,8 @@ tests:
         - hypothesis >=5.7.1
         - pytest-trio
         - python ${{ python_min }}.*
+    script:
+      - python run_test.py
 
 about:
   license: Apache-2.0
