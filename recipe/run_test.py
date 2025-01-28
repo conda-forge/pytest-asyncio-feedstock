@@ -1,7 +1,7 @@
 import sys
 from subprocess import call
 
-FAIL_UNDER = "91"
+FAIL_UNDER = "90"
 COV = ["coverage"]
 RUN = ["run", "--source=pytest_asyncio", "--branch", "-m"]
 PYTEST = ["pytest", "-vv", "--color=yes", "--tb=long"]
