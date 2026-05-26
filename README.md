@@ -3,7 +3,7 @@ About pytest-asyncio-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/pytest-asyncio-feedstock/blob/main/LICENSE.txt)
 
-Home: http://github.com/pytest-dev/pytest-asyncio
+Home: http://pypi.org/project/pytest-asyncio
 
 Package license: Apache-2.0
 
@@ -15,11 +15,10 @@ Current build status
 ====================
 
 
-<table><tr><td>All platforms:</td>
+<table><tr>
+    <td>All platforms:</td>
     <td>
-      <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=931&branchName=main">
-        <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pytest-asyncio-feedstock?branchName=main">
-      </a>
+      <img src="https://img.shields.io/badge/noarch-disabled-lightgrey.svg" alt="noarch disabled">
     </td>
   </tr>
 </table>
