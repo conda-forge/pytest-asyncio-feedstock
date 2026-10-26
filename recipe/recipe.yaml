@@ -10,14 +10,14 @@ package:
   version: ${{ version }}
 
 source:
-  url: https://pypi.org/packages/source/p/pytest-asyncio/pytest_asyncio-${{ version }}.tar.gz
+  url: https://files.pythonhosted.org/packages/source/p/pytest-asyncio/pytest_asyncio-${{ version }}.tar.gz
   sha256: e8266eb094e5ee9ffdb2068c9836f33e209ea77a970eb846933d416b5602669b
 
 build:
   number: 0
   noarch: python
   script:
-    - ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check
+    - ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check --check-build-dependencies
 
 requirements:
   host:
@@ -28,12 +28,17 @@ requirements:
   run:
     - pytest >=8.4,<10
     - python >=${{ python_min }}
-    # needed for <3.11
-    - typing_extensions >=4.12
     # needed for <3.13
-    - backports.asyncio.runner >=1.1,<2
+    - typing_extensions >=4.12
 
 tests:
+  - package_contents:
+      strict: true
+      files:
+        - etc/conda/test-files/pytest-asyncio/**
+      site_packages:
+        - pytest_asyncio/**
+        - pytest_asyncio-${{ version }}.dist-info/**
   - python:
       imports: pytest_asyncio
       pip_check: true
