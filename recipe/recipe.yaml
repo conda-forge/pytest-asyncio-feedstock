@@ -2,7 +2,7 @@
 schema_version: 1
 
 context:
-  version: "1.4.1"
+  version: "1.4.1.post1"
   python_check_max: "3.14"
 
 package:
@@ -11,7 +11,7 @@ package:
 
 source:
   url: https://files.pythonhosted.org/packages/source/p/pytest-asyncio/pytest_asyncio-${{ version }}.tar.gz
-  sha256: e8266eb094e5ee9ffdb2068c9836f33e209ea77a970eb846933d416b5602669b
+  sha256: f582d9ea4a1c082195abe8bd29a1fe106aeb1cd435e3dad2d3bc2749935c36a2
 
 build:
   number: 0
