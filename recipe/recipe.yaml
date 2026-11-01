@@ -26,7 +26,7 @@ requirements:
     - setuptools >=77.0
     - setuptools-scm >=6.2
   run:
-    - pytest >=8.4,<10
+    - pytest >=8.4
     - python >=${{ python_min }}
     # needed for <3.13
     - typing_extensions >=4.12
